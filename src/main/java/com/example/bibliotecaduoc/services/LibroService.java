@@ -1,4 +1,5 @@
-import com.example.bibliotecaduoc.model.Libro;
+package com.example.bibliotecaduoc.services;
+import com.example.bibliotecaduoc.model.Libro;  
 import com.example.bibliotecaduoc.repository.LibroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +12,7 @@ public class LibroService {
     private LibroRepository libroRepository;
 
     // Método para obtener todos los libros
-    public List<Libro> obtenerLibros() {
+    public List<Libro> getLibros() {
         return libroRepository.obtenerLibros();
     }
 
@@ -29,3 +30,4 @@ public class LibroService {
     public Libro guardar(Libro lib) {
         return libroRepository.guardar(lib);
     }
+}
