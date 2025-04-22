@@ -30,6 +30,15 @@ public class LibroService {
 
     public String deleteLibro(int id) {
         libroRepository.eliminar(id);
-        return "Libro eliminado con exito";
-    };
+        return "Producto Eliminado";
+    }
+
+    public int totalLibrosV1 () {
+        return libroRepository.obtenerLibros().size();
+    }
+
+    public int totalLibrosV2 () {
+        return libroRepository.obtenerLibros().size();
+    }
+
 }
