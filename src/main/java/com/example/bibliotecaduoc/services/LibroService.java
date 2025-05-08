@@ -2,8 +2,12 @@ package com.example.bibliotecaduoc.services;
 
 import com.example.bibliotecaduoc.model.Libro;
 import com.example.bibliotecaduoc.repository.LibroRepository;
+
+import org.springframework.aot.hint.annotation.ReflectiveRuntimeHintsRegistrar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.resource.ResourceTransformer;
+
 import java.util.List;
 
 @Service
@@ -30,15 +34,14 @@ public class LibroService {
 
     public String deleteLibro(int id) {
         libroRepository.eliminar(id);
-        return "Producto Eliminado";
-    }
+        return "Libro eliminado con exito";
+    };
 
-    public int totalLibrosV1 () {
+    public int totalLibrosV1(){
         return libroRepository.obtenerLibros().size();
     }
 
-    public int totalLibrosV2 () {
-        return libroRepository.obtenerLibros().size();
+    public int totalLibrosV2(){
+        return libroRepository.totalLibros();
     }
-
 }
